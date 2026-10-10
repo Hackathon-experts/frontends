@@ -1,0 +1,160 @@
+<!doctype html>
+
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Make room to FOR AURA"><title>Aura Maxing — Aura Notes</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body data-sample="false">
+<a class="skip" href="#main">Skip to Aura Maxing content</a>
+
+<main id="main"><section class="pad studio-section" id="studio">
+    <div class="wrap"><a class="page-back" href="index.html">← Back to home</a>
+
+
+    <p>Try it with your own lecture. Upload slide images or a PDF, then record and add notes as you go.</p><div class="studio">
+        <div class="toolbar">
+            <input id="title" aria-label="Lecture title" value="My first lecture" maxlength="120">
+            <span class="timer" id="clock">00:00</span>
+            <button class="btn small" id="record">● Start recording</button>
+            <button class="btn light small" id="stop" disabled>Stop</button>
+        </div>
+        
+        <div class="studio-grid">
+            <div class="slides-pane">
+                <div class="slide-screen" id="slide-screen" aria-live="polite">
+                    <div class="slide-placeholder">
+                        <span class="eyebrow">Ready when you are</span>
+                        <h3>A place for your slides</h3>
+                        <p>Choose a PDF, or select several slide images.</p>
+                    </div>
+                </div>
+
+                <div class="slide-controls">
+                    <label class="btn light small">Upload slides<input hidden id="slides" type="file" accept="application/pdf,image/png,image/jpeg,image/webp" multiple></label>
+                    <button class="btn light small" id="prev" disabled aria-label="Previous slide">←</button>
+                    <span id="slide-label" class="fine">No slides yet</span>
+                    <button class="btn light small" id="next" disabled aria-label="Next slide">→</button>
+                    <button class="btn light small" id="mark">Mark this slide</button>
+                </div>
+                <p class="fine">PDF pages are rendered into this box. Images use the arrows. Markers follow the recording timeline.</p>
+            </div>
+
+            
+            <div class="notes-pane">
+                <div class="notes-heading"><h3>Notes timeline</h3><span id="note-count" class="fine">0 notes</span></div>
+
+                <form id="note-form"><label for="note" class="fine">A key point, a question, or something to revisit.</label>
+                    <textarea id="note" placeholder="That example finally clicked…" maxlength="3000" required></textarea>
+                    <button class="btn small">Add timestamped note +</button>
+                </form>
+
+                <label class="fine note-search-label" for="note-search">Find a note</label>
+                <input id="note-search" class="note-search" type="search" placeholder="Search notes and transcript">
+                <ul class="note-list" id="notes"></ul>
+            </div>
+        </div>
+        
+        <div class="transport" id="transport">
+            <button class="transport-play" id="play" aria-label="Play or pause" disabled>▶</button>
+            <span class="transport-time" id="transport-time">00:00</span>
+            <div class="transport-track" id="transport-track" aria-label="Playback timeline">
+                <div class="transport-progress" id="timeline-progress"></div>
+                <div class="transport-events" id="timeline-events"></div>
+            </div>
+        </div>
+
+        <div class="action-row">
+            <p id="status" class="status" role="status" aria-live="polite">Ready. Allow microphone access when you start recording.</p>
+            <div class="action-buttons">
+                <label class="btn light small">Import audio<input hidden id="audio-import" type="file" accept="audio/*"></label>
+                <button id="save" class="btn small">Save session</button>
+                <button id="export" class="btn light small">Download notes</button>
+                <button id="download-audio" class="btn light small" disabled>Download recording</button>
+                <button id="new" class="btn light small">New session</button>
+            </div>
+        </div>
+
+        <div class="ai-row">
+            <button type="button" class="ai-btn" id="ai-summary">Summary</button>
+            <button type="button" class="ai-btn" id="ai-flashcards">Flashcards</button>
+            <button type="button" class="ai-btn" id="ai-quiz">Quiz</button>
+        </div>
+    </div>
+    <details class="saved" id="saved-panel">
+        <summary>Saved sessions</summary>
+        <div id="sessions"><p class="fine">Your saved lectures will appear here.</p></div>
+    </details>
+</div>
+</div>
+</section>
+
+<audio id="audio" hidden></audio>
+
+<!-- AI feature overlays -->
+<div class="ai-overlay" id="summary-overlay" aria-hidden="true">
+    <div class="ai-overlay-backdrop" data-close="summary"></div>
+    <div class="ai-overlay-panel" role="dialog" aria-modal="true" aria-label="Summary">
+        <button class="ai-overlay-close" data-close="summary" aria-label="Close summary">×</button>
+        <div class="ai-overlay-body">
+            <p class="eyebrow">After the lecture</p>
+            <h3>Summary</h3>
+            <div id="summary-output"><p class="fine">No summary yet — generate one to see it here.</p></div>
+        </div>
+    </div>
+</div>
+
+<div class="ai-overlay" id="flashcards-overlay" aria-hidden="true">
+    <div class="ai-overlay-backdrop" data-close="flashcards"></div>
+    <div class="ai-overlay-panel" role="dialog" aria-modal="true" aria-label="Flashcards">
+        <button class="ai-overlay-close" data-close="flashcards" aria-label="Close flashcards">×</button>
+        <div class="ai-overlay-body">
+            <p class="eyebrow">After the lecture</p>
+            <h3>Flashcards</h3>
+            <div id="flashcards-output"></div>
+        </div>
+    </div>
+</div>
+
+<div class="ai-overlay" id="quiz-overlay" aria-hidden="true">
+    <div class="ai-overlay-backdrop" data-close="quiz"></div>
+    <div class="ai-overlay-panel" role="dialog" aria-modal="true" aria-label="Quiz">
+        <button class="ai-overlay-close" data-close="quiz" aria-label="Close quiz">×</button>
+        <div class="ai-overlay-body">
+            <p class="eyebrow">After the lecture</p>
+            <h3>Quiz</h3>
+            <div id="quiz-output"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Central loading overlay -->
+<div class="loading-overlay" id="loading-overlay" aria-hidden="true">
+    <div class="loading-card" role="status" aria-live="polite">
+        <div class="spinner" aria-hidden="true"></div>
+        <p class="loading-message" id="loading-message">Loading…</p>
+    </div>
+</div>
+</main>
+<footer class="footer">
+    <div class="wrap">
+        <div class="foot-grid">
+            <a class="logo" href="index.html">Aura</a>
+            <a href="index.html#students">For students</a><a href="index.html#institutions">For institutions</a>
+            <a href="index.html#resources">Study resources</a>
+            <a href="index.html#faq">Help & privacy</a>
+        </div>
+        <p class="fine">© <span id="year">
+
+        </span>Aura</p>
+    </div>
+</footer>
+<script src="coi-serviceworker.js"></script>
+<script src="helpers.js"></script>
+<script src="navigation.js"></script>
+<script src="whisper-wrapper.js"></script>
+<script src="studio.js"></script>
+</body>
+</html>

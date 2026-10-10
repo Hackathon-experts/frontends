@@ -1,0 +1,111 @@
+<!doctype html>
+
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Make room to FOR AURA"><title>Explore a sample — Aura Notes</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body data-sample="true">
+<a class="skip" href="#main">Skip to Aura Maxing content</a>
+<div class="top">
+    Less negatives more aura GAINING. 
+    <a href="aura-maxing.html">Try the aura →</a>
+</div>
+
+<header class="header">
+    <div class="wrap nav">C:
+        <a class="logo" href="index.html">
+            <span aria-hidden="true">◉</span>Aura</a>
+            <button class="btn light small menu" aria-expanded="false" aria-controls="nav-links" id="menu">Menu</button>
+            <nav class="links" id="nav-links" aria-label="Main navigation">
+                <a href="index.html#students">For students</a><a href="index.html#institutions">For institutions</a>
+                <a href="index.html#resources">Resources</a>
+                <a href="index.html#about">Our Aura</a>
+            </nav><a class="btn small" href="aura-maxing.html">Unlock your Aura ↗</a>
+        </div>
+    </header>
+
+
+
+
+<main id="main"><section class="pad studio-section" id="studio">
+    <div class="wrap"><a class="page-back" href="index.html">← Back to home</a><div class="studio-heading">
+        <div><p class="eyebrow">A sample to explore</p>
+            <h2>Explore a sample.<br><em>See your notes in action.</em></h2>
+        </div>
+        <a class="btn light" href="aura-maxing.html">Start your own session ↗</a>
+    </div>
+
+
+    <p>These are sample notes, with no audio recording attached. Explore them here, or start your own session on the Aura Maxing page.</p><div class="studio">
+        <div class="toolbar">
+            <input id="title" aria-label="Lecture title" value="My first lecture" maxlength="120">
+            <span class="timer" id="clock">00:00</span>
+            <button class="btn small" id="record">● Start recording</button>
+            <button class="btn light small" id="stop" disabled>Stop</button>
+        </div>
+        
+        <div class="studio-grid">
+            <div class="slides-pane">
+                <div class="slide-screen" id="slide-screen">
+                    <div class="slide-placeholder">
+                        <span class="eyebrow">Ready when you are</span>
+                        <h3>A place for your slides</h3>
+                        <p>Choose a PDF, or select several slide images.</p>
+                    </div>
+                </div>
+
+                <div class="slide-controls">
+                    <label class="btn light small">Upload slides<input hidden id="slides" type="file" accept="application/pdf,image/png,image/jpeg,image/webp" multiple></label>
+                    <button class="btn light small" id="prev" disabled aria-label="Previous slide">←</button>
+                    <span id="slide-label" class="fine">No slides yet</span>
+                    <button class="btn light small" id="next" disabled aria-label="Next slide">→</button>
+                    <button class="btn light small" id="mark">Mark this slide</button>
+                </div>
+                <p class="fine">PDF: use its viewer to change pages, then “Mark this slide”. Images: use the arrows.</p>
+            </div>
+
+            
+            <div class="notes-pane">
+                <h3>What’s on your mind?</h3>
+
+                <form id="note-form"><label for="note" class="fine">A key point, a question, or something to revisit.</label>
+                    <textarea id="note" placeholder="That example finally clicked…" maxlength="3000" required>
+                    </textarea>
+
+                    <button class="btn small">Add timestamped note +</button>
+                </form><ul class="note-list" id="notes"></ul>
+            </div>
+        </div>
+        
+        <div class="playback"><p id="status" class="status" role="status" aria-live="polite">Ready. Allow microphone access when you start recording.</p><audio id="audio" controls hidden></audio><div class="save-actions"><button id="save" class="btn small">Save session in this browser</button><button id="export" class="btn light small">Download notes</button><button id="download-audio" class="btn light small" disabled>Download recording</button>
+            <button id="new" class="btn light small">New session</button>
+        </div>
+        <p class="fine">Save after stopping. Sessions include audio, notes and uploaded slides. Download important recordings as a backup.</p>
+    </div>
+    <div class="saved"><h3>Saved sessions</h3>
+        <div id="sessions"><p class="fine">Your saved lectures will appear here.</p>
+        </div>
+    </div>
+</div>
+</div>
+</section></main>
+<footer class="footer">
+    <div class="wrap">
+        <div class="foot-grid">
+            <a class="logo" href="index.html">Aura</a>
+            <a href="index.html#students">For students</a><a href="index.html#institutions">For institutions</a>
+            <a href="index.html#resources">Study resources</a>
+            <a href="index.html#faq">Help & privacy</a>
+        </div>
+        <p class="fine">© <span id="year">
+
+        </span>Aura</p>
+    </div>
+</footer>
+<script src="navigation.js"></script>
+<script src="studio.js"></script>
+</body>
+</html>

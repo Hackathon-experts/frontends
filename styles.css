@@ -1,0 +1,875 @@
+:root{
+    --ink:#242330;
+    --purple:#6853bd;
+    --lav:#e7e0fa;
+    --cream:#faf8f2;
+    --pink:#fbc5cb;
+    --muted:#686473;
+    --line:#ddd9e6
+}
+*
+{
+    box-sizing:border-box}
+html
+{
+    scroll-behavior:smooth;
+    scroll-padding-top:90px}
+body
+{
+    margin:0;color:var(--ink);
+    background:var(--cream);
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:17px;line-height:1.6
+}
+button,input,textarea{font:inherit}
+
+button,a,input,textarea{touch-action:manipulation}
+
+a{color:inherit}button{cursor:pointer}
+
+button:disabled{opacity:.45;cursor:not-allowed}
+
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid var(--purple);outline-offset:4px}
+
+.wrap
+{width:min(1200px,90%);margin:auto}
+
+.btn
+{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;padding:13px 23px;border:1px solid var(--ink);
+    border-radius:40px;
+    background:var(--ink);
+    color:white;
+    text-decoration:none;
+    font-weight:bold;line-height:1.4
+}
+
+.btn:hover
+{
+    background:var(--purple);border-color:var(--purple)
+}
+.btn.light
+{
+    background:transparent;
+    color:var(--ink)
+}
+.btn.light:hover
+{
+    background:white
+}
+.small
+{
+    padding:8px 16px;font-size:14px
+}
+    .eyebrow
+    {
+        text-transform:uppercase;
+        letter-spacing:2px;font-size:12px;
+        font-weight:bold;color:var(--purple)
+}
+    h1,h2,h3,p
+    {
+        margin-top:0
+    }
+h1
+{
+    font-size:clamp(44px,5.8vw,78px);
+    line-height:1.07;
+    letter-spacing:-3px;
+    font-weight:500;
+    margin-bottom:25px
+}
+h1 em,h2 em
+{
+    font-family:Georgia,serif;
+    font-weight:normal
+}
+h2
+{
+    font-size:clamp(32px,3.7vw,48px);
+    line-height:1.15;
+    letter-spacing:-1.5px;
+    font-weight:500;
+}
+
+h3
+{
+    line-height:1.3;
+    font-size:23px;
+}
+p{
+     color:var(--muted)
+ }
+.top
+{
+    background:var(--lav);
+    font-size:13px;text-align:center;
+    padding:8px
+}
+.header
+{
+    position:sticky;
+    top:0;z-index:20;
+    background:rgba(250,248,242,.97);
+    border-bottom:1px solid var(--line)
+}
+.nav
+{
+    min-height:84px;
+    display:flex;align-items:center;gap:25px
+}
+.logo
+{
+    font-size:23px;
+    font-weight:bold;
+    text-decoration:none;
+    letter-spacing:-1px;
+    white-space:nowrap
+}
+.logo span
+{
+    display:inline-grid;
+    place-items:center;
+    background:var(--purple);
+    color:white;
+    border-radius:50%;
+    width:35px;
+    height:35px;
+    margin-right:9px
+}
+
+.links
+{
+    display:flex;
+    gap:25px;
+    margin-left:auto
+}
+
+.links a
+{
+    text-decoration:none;
+    font-size:14px
+}
+
+.links a:hover
+{
+    text-decoration:underline
+}
+.menu
+{
+    display:none
+}
+
+.hero
+{
+    background:radial-gradient(ellipse at 93% 65%,#e9d3ec,transparent 55%),linear-gradient(120deg,#f5f0ff,#e5def8);padding:85px 0 80px;
+    overflow:hidden
+}
+
+.hero-grid
+{
+    display:grid;
+    grid-template-columns:1.05fr 1fr;gap:60px;
+    align-items:center
+    }
+    .hero p
+    {
+        max-width:510px;font-size:19px
+    }
+    .actions
+    {
+        display:flex;gap:12px;
+        flex-wrap:wrap;
+        margin:28px 0 15px
+    }
+        .fine
+        {
+            font-size:13px!important
+        }
+        .visual
+        {
+            position:relative;
+            padding:20px 0 35px
+        }
+            .mock
+            {
+                background:white;
+                border:1px solid #b9accf;
+                border-radius:16px;
+                box-shadow:15px 20px 0 #c5b8e7;
+                transform:rotate(-3deg);
+                overflow:hidden;
+            }
+                .mock-head
+                {
+                    padding:15px 20px;
+                    border-bottom:1px solid var(--line);
+                    font-size:12px;
+                    display:flex;
+                    justify-content:space-between}
+
+                    .mock-body
+                    {
+                        padding:25px;
+                        display:grid;
+                        grid-template-columns:1.4fr 1fr;
+                        gap:20px
+                    }
+                    .slide
+                    {
+                        background:var(--lav);
+                        padding:25px;
+                        border-radius:9px;
+                        min-height:190px
+                    }
+                    .slide b
+                    {
+                        font-size:24px;
+                        line-height:1.15;
+                        display:block
+                    }
+                        .sketch
+                        {
+                            display:flex;
+                            align-items:end;
+                            gap:12px;
+                            height:70px;
+                            margin-top:20px
+                            }
+                            .sketch i
+                            {
+                                width:30%;
+                                background:var(--purple);
+                                border-radius:8px 8px 0 0}
+                                .sketch i:nth-child(1)
+                                {
+                                    height:32%
+                                }.sketch i:nth-child(2)
+                                {
+                                    height:64%;background:#af9de1
+                                    }.sketch i:nth-child(3)
+                                    {
+                                        height:95%;background:#ed9ca9
+                                    }
+                                    .mock-notes
+                                    {
+                                        font-size:12px
+                                    }
+                                    .mock-notes p
+                                    {
+                                        padding:12px;
+                                        border-radius:8px;
+                                        background:#fff4cc;
+                                        color:var(--ink)
+                                        }
+                                        .wave
+                                        {
+                                            height:50px;
+                                            display:flex;
+                                            align-items:center;
+                                            gap:4px;
+                                            padding:0 25px;
+                                            background:#f6f3fa
+                                            }
+                                            .wave i
+                                            {
+                                                flex:1;
+                                                background:var(--purple);
+                                                border-radius:6px;
+                                                height:var(--h)
+                                                }
+                                                .sticker
+                                                {
+                                                    position:absolute;
+                                                    bottom:0;right:-10px;
+                                                    transform:rotate(5deg);
+                                                    background:var(--pink);
+                                                    border:1px solid var(--ink);
+                                                    padding:13px 20px;
+                                                    border-radius:5px;
+                                                    font-family:Georgia,serif;
+                                                    font-size:20px}
+                                                    .under-hero
+                                                    {
+                                                        display:flex;
+                                                        justify-content:space-between;
+                                                        gap:20px;
+                                                        padding:24px 0;
+                                                        font-size:14px;
+                                                        border-bottom:1px solid var(--line)
+                                                        }
+                                                        section.pad
+                                                        {
+                                                            padding:85px 0
+                                                        }
+                                                        .intro
+                                                        {
+                                                            max-width:670px;margin-bottom:40px
+                                                            }
+                                                            .grid3
+                                                            {
+                                                                display:grid;
+                                                                grid-template-columns:repeat(3,1fr);
+                                                                gap:24px
+                                                            }
+                                                            .card
+                                                            {
+                                                                border:1px solid var(--line);
+                                                                border-radius:16px;
+                                                                padding:30px;
+                                                                background:white
+                                                                }
+                                                                .card .num
+                                                                {
+                                                                    display:grid;
+                                                                    place-items:center;
+                                                                    width:43px;height:43px;
+                                                                    background:var(--lav);
+                                                                    border-radius:50%;
+                                                                    margin-bottom:25px
+                                                                }.card p
+                                                                {
+                                                                    font-size:16px;
+                                                                    margin-bottom:0
+                                                                    }
+                                                                    .audience
+                                                                    {
+                                                                        background:#eeeadf;
+                                                                    }
+                                                                    .audience .card:nth-child(2)
+                                                                    {
+                                                                        background:var(--lav)
+                                                                    }.audience .card:nth-child(3)
+                                                                    {
+                                                                    background:#fce3df
+                                                                    }
+                                                                    .card a
+                                                                    {
+                                                                        display:inline-block;
+                                                                        margin-top:20px;
+                                                                        font-size:14px;
+                                                                        font-weight:bold;
+                                                                    }.studio-section
+                                                                    {
+                                                                        background:#f0ebfb
+                                                                    }
+                                                                    .studio-heading
+                                                                    {
+                                                                        display:flex;
+                                                                        justify-content:
+                                                                        space-between;
+                                                                        align-items:center;
+                                                                        gap:20px;
+                                                                        
+                                                                    }
+                                                                    .studio{
+                                                                        background:white;
+                                                                        border:1px solid #c9bfdd;
+                                                                        border-radius:18px;
+                                                                        overflow:hidden;
+                                                                        box-shadow:0 20px 50px #49377a12
+                                                                        }
+                                                                        .toolbar
+                                                                        {
+                                                                            padding:20px;
+                                                                            display:flex;
+                                                                            align-items:center;
+                                                                            gap:15px;
+                                                                            border-bottom:1px solid var(--line);
+                                                                            flex-wrap:wrap
+                                                                        }.toolbar input
+                                                                        {
+                                                                            flex:1;
+                                                                            min-width:160px;
+                                                                            border:0;
+                                                                            font-size:20px;
+                                                                            font-weight:bold;
+                                                                            padding:8px
+                                                                        }
+                                                                        .timer
+                                                                        {
+                                                                            font-variant-numeric:tabular-nums;
+                                                                            font-weight:bold;white-space:nowrap
+                                                                            }
+                                                                            .studio-grid
+                                                                            {
+                                                                                display:grid;
+                                                                                grid-template-columns:1.3fr 1fr
+                                                                                }
+                                                                                .slides-pane
+                                                                                {
+                                                                                    padding:25px;
+                                                                                    border-right:1px solid var(--line);
+                                                                                }
+                                                                                .slide-screen{background:var(--lav);
+                                                                                border-radius:12px;
+                                                                                min-height:270px;
+                                                                                display:grid;
+                                                                                place-items:center;
+                                                                                text-align:center;
+                                                                                overflow:hidden
+                                                                                }
+                                                                                .slide-screen img
+                                                                                {
+                                                                                    width:100%;
+                                                                                    height:300px;
+                                                                                    object-fit:contain
+                                                                                    }.slide-screen canvas
+                                                                                    {
+                                                                                        max-width:100%;
+                                                                                        max-height:100%;
+                                                                                        display:block
+                                                                                    }.slide-placeholder{
+                                                                                        padding:35px
+                                                                                        }.slide-placeholder h3{
+                                                                                            font-size:30px
+                                                                                            }
+                                                                                            .slide-controls
+                                                                                            {
+                                                                                                display:flex;
+                                                                                                gap:10px;
+                                                                                                justify-content:space-between;
+                                                                                                align-items:center;
+                                                                                                margin-top:15px;
+                                                                                                flex-wrap:wrap
+                                                                                                }.notes-pane
+                                                                                                {
+                                                                                                    padding:25px
+                                                                                                    }
+                                                                                                    .notes-pane textarea
+                                                                                                    {width:100%;
+                                                                                                    resize:vertical;
+                                                                                                    border:1px solid var(--line);
+                                                                                                    border-radius:10px;
+                                                                                                    padding:13px;min-height:85px
+                                                                                                    }.notes-pane form
+                                                                                                    {
+                                                                                                        display:flex;
+                                                                                                        flex-direction:
+                                                                                                        column;gap:10px
+                                                                                                        }
+                                                                                                        .notes-pane form button
+                                                                                                        {
+                                                                                                            align-self:flex-end
+                                                                                                            }
+                                                                                                            .note-list
+                                                                                                            {
+                                                                                                                padding:0;
+                                                                                                                list-style:none;
+                                                                                                                max-height:230px;
+                                                                                                                overflow:auto
+                                                                                                                }
+                                                                                                                .notes-heading,.notes-view-heading
+                                                                                                                {
+                                                                                                                    display:flex;
+                                                                                                                    justify-content:space-between;
+                                                                                                                    align-items:baseline;
+                                                                                                                    gap:12px
+                                                                                                                }
+                                                                                                                .note-search-label
+                                                                                                                {
+                                                                                                                    display:block;
+                                                                                                                    margin-top:18px
+                                                                                                                }
+                                                                                                                .note-search
+                                                                                                                {
+                                                                                                                    width:100%;
+                                                                                                                    border:1px solid var(--line);
+                                                                                                                    border-radius:8px;
+                                                                                                                    padding:8px 10px;
+                                                                                                                    margin-top:4px
+                                                                                                                }
+                                                                                                                .note-list li
+                                                                                                                {
+                                                                                                                    padding:12px 0;
+                                                                                                                    border-bottom:1px solid var(--line);
+                                                                                                                    font-size:14px;
+                                                                                                                    display:flex;
+                                                                                                                    gap:12px;
+                                                                                                                    align-items:start
+                                                                                                                }
+                                                                                                                .note-list button
+                                                                                                                {
+                                                                                                                    border:0;
+                                                                                                                    background:var(--lav);
+                                                                                                                    border-radius:5px;
+                                                                                                                    font-size:12px;
+                                                                                                                    padding:4px 8px;
+                                                                                                                    white-space:nowrap
+                                                                                                                }
+                                                                                                                 .transcript-note
+                                                                                                                 {
+                                                                                                                     background:#faf7ff
+                                                                                                                 }
+                                                                                                                 .transcript-note .note-time
+                                                                                                                 {
+                                                                                                                     background:var(--lav)
+                                                                                                                 }
+                                                                                                                .timeline
+                                                                                                                {
+                                                                                                                    margin:20px 0 10px;
+                                                                                                                    position:relative
+                                                                                                                }
+                                                                                                                .timeline-track
+                                                                                                                {
+                                                                                                                    height:6px;
+                                                                                                                    border-radius:8px;
+                                                                                                                    background:var(--line);
+                                                                                                                    overflow:hidden
+                                                                                                                }
+                                                                                                                .timeline-track span
+                                                                                                                {
+                                                                                                                    display:block;
+                                                                                                                    height:100%;
+                                                                                                                    width:0;
+                                                                                                                    background:var(--purple);
+                                                                                                                    transition:width .1s linear
+                                                                                                                }
+                                                                                                                .timeline-events
+                                                                                                                {
+                                                                                                                    height:18px;
+                                                                                                                    position:relative
+                                                                                                                }
+                                                                                                                .timeline-marker
+                                                                                                                {
+                                                                                                                    position:absolute;
+                                                                                                                    top:-13px;
+                                                                                                                    transform:translateX(-50%);
+                                                                                                                    border:0;
+                                                                                                                    background:var(--pink);
+                                                                                                                    color:var(--ink);
+                                                                                                                    border-radius:50%;
+                                                                                                                    width:18px;
+                                                                                                                    height:18px;
+                                                                                                                    line-height:10px;
+                                                                                                                    padding:0
+                                                                                                                }
+                                                                                                                    .playback
+                                                                                                                    {
+                                                                                                                        padding:16px 25px;
+                                                                                                                        border-top:1px solid var(--line)
+                                                                                                                        }
+                                                                                                                        audio
+                                                                                                                        {
+                                                                                                                            width:100%;margin:10px 0}
+                                                                                                                            .status
+                                                                                                                            {
+                                                                                                                                font-size:14px;
+                                                                                                                                margin:0;
+                                                                                                                                color:var(--muted)
+                                                                                                                                }
+                                                                                                                                .saved
+                                                                                                                                {
+                                                                                                                                    padding:20px 25px;
+                                                                                                                                    border-top:1px solid var(--line)
+                                                                                                                                }
+                                                                                                                                    .saved-item
+                                                                                                                                    {
+                                                                                                                                        display:flex;
+                                                                                                                                        gap:12px;
+                                                                                                                                        align-items:center;
+                                                                                                                                        padding:12px 0;
+                                                                                                                                        border-bottom:1px solid var(--line)
+                                                                                                                                        }
+                                                                                                                                        .saved-item span
+                                                                                                                                        {flex:1;font-size:14px}
+                                                                                                                                        .save-actions
+                                                                                                                                        {
+                                                                                                                                            display:flex;
+                                                                                                                                            gap:10px;
+                                                                                                                                            flex-wrap:wrap
+                                                                                                                                            }
+                                                                                                                                            .study-workspace
+                                                                                                                                            {
+                                                                                                                                                padding:35px 25px;
+                                                                                                                                                border-top:1px solid var(--line)
+                                                                                                                                            }
+                                                                                                                                            .study-heading
+                                                                                                                                            {
+                                                                                                                                                display:flex;
+                                                                                                                                                justify-content:space-between;
+                                                                                                                                                align-items:center;
+                                                                                                                                                gap:20px;
+                                                                                                                                                flex-wrap:wrap
+                                                                                                                                            }
+                                                                                                                                            .study-actions,.study-generator
+                                                                                                                                            {
+                                                                                                                                                display:flex;
+                                                                                                                                                gap:8px;
+                                                                                                                                                flex-wrap:wrap;
+                                                                                                                                                align-items:center
+                                                                                                                                            }
+                                                                                                                                            .study-generator
+                                                                                                                                            {
+                                                                                                                                                padding:15px 0;
+                                                                                                                                                border-bottom:1px solid var(--line)
+                                                                                                                                            }
+                                                                                                                                            .study-tab.active
+                                                                                                                                            {
+                                                                                                                                                background:var(--purple);
+                                                                                                                                                color:white;
+                                                                                                                                                border-color:var(--purple)
+                                                                                                                                            }
+                                                                                                                                            .study-view
+                                                                                                                                            {
+                                                                                                                                                padding-top:20px
+                                                                                                                                            }
+                                                                                                                                            #summary-output
+                                                                                                                                            {
+                                                                                                                                                white-space:pre-wrap;
+                                                                                                                                                color:var(--ink);
+                                                                                                                                                line-height:1.7
+                                                                                                                                            }
+                                                                                                                                            .summary-section
+                                                                                                                                            {
+                                                                                                                                            border-top:1px solid var(--line);
+                                                                                                                                            padding:12px 0
+                                                                                                                                            }
+                                                                                                                                            .summary-section h4
+                                                                                                                                            {
+                                                                                                                                            margin:0 0 6px
+                                                                                                                                            }
+                                                                                                                                            .key-terms
+                                                                                                                                            {
+                                                                                                                                            background:var(--lav);
+                                                                                                                                            border-radius:8px;
+                                                                                                                                            padding:12px;
+                                                                                                                                            color:var(--ink)
+                                                                                                                                            }
+                                                                                                                                            .flashcard,.quiz-question
+                                                                                                                                            {
+                                                                                                                                                border:1px solid var(--line);
+                                                                                                                                                border-radius:10px;
+                                                                                                                                                padding:15px;
+                                                                                                                                                margin:10px 0;
+                                                                                                                                                background:#fffdf7
+                                                                                                                                            }
+                                                                                                                                            .flashcard-toggle
+                                                                                                                                            {
+                                                                                                                                                width:100%;
+                                                                                                                                                border:0;
+                                                                                                                                                background:transparent;
+                                                                                                                                                text-align:left;
+                                                                                                                                                font-weight:bold;
+                                                                                                                                                padding:0
+                                                                                                                                            }
+                                                                                                                                            .flashcard h3
+                                                                                                                                            {
+                                                                                                                                                margin:6px 0
+                                                                                                                                            }
+                                                                                                                                            .flashcard small
+                                                                                                                                            {
+                                                                                                                                                color:var(--muted)
+                                                                                                                                            }
+                                                                                                                                            .quiz-score
+                                                                                                                                            {
+                                                                                                                                                font-weight:bold;
+                                                                                                                                                color:var(--ink)
+                                                                                                                                            }
+                                                                                                                                            .quiz-options
+                                                                                                                                            {
+                                                                                                                                                display:grid;
+                                                                                                                                                gap:8px;
+                                                                                                                                                margin:12px 0
+                                                                                                                                            }
+                                                                                                                                            .quiz-option
+                                                                                                                                            {
+                                                                                                                                                display:flex;
+                                                                                                                                                gap:8px;
+                                                                                                                                                align-items:flex-start;
+                                                                                                                                                border:1px solid var(--line);
+                                                                                                                                                border-radius:8px;
+                                                                                                                                                padding:10px;
+                                                                                                                                                cursor:pointer
+                                                                                                                                            }
+                                                                                                                                            .quiz-option:has(input:checked)
+                                                                                                                                            {
+                                                                                                                                                border-color:var(--purple);
+                                                                                                                                                background:var(--lav)
+                                                                                                                                            }
+                                                                                                                                            .quiz-question textarea
+                                                                                                                                            {
+                                                                                                                                                display:block;
+                                                                                                                                                width:100%;
+                                                                                                                                                min-height:70px;
+                                                                                                                                                margin:8px 0;
+                                                                                                                                                border:1px solid var(--line);
+                                                                                                                                                border-radius:8px;
+                                                                                                                                                padding:8px
+                                                                                                                                            }
+                                                                                                                                            .quiz-feedback
+                                                                                                                                            {
+                                                                                                                                                margin:10px 0 0;
+                                                                                                                                                color:var(--ink)
+                                                                                                                                            }
+                                                                                                                                                                                                                .quiz-feedback small
+                                                                                                                                                                                                                {
+                                                                                                                                            display:block;
+                                                                                                                                            margin-top:5px;
+                                                                                                                                            color:var(--muted)
+                                                                                                                                                                                                                }
+                                                                                                                                                                                                                .transcript-block
+                                                                                                                                                                                                                {
+                                                                                                                                            white-space:pre-wrap;
+                                                                                                                                            background:#fffdf7;
+                                                                                                                                            border:1px solid var(--line);
+                                                                                                                                            border-radius:8px;
+                                                                                                                                            padding:15px;
+                                                                                                                                            max-height:260px;
+                                                                                                                                            overflow:auto
+                                                                                                                                                                                                                }
+                                                                                                                                                                                                                .notes-view-list
+                                                                                                                                                                                                                {
+                                                                                                                                            display:grid;
+                                                                                                                                            gap:8px
+                                                                                                                                                                                                                }
+                                                                                                                                                                                                                .notes-view-item
+                                                                                                                                                                                                                {
+                                                                                                                                            display:grid;
+                                                                                                                                            grid-template-columns:70px 1fr;
+                                                                                                                                            gap:12px;
+                                                                                                                                            text-align:left;
+                                                                                                                                            border:1px solid var(--line);
+                                                                                                                                            background:white;
+                                                                                                                                            border-radius:8px;
+                                                                                                                                            padding:10px
+                                                                                                                                                                                                                }
+                                                                                                                                                                                                                .notes-view-item strong
+                                                                                                                                                                                                                {
+                                                                                                                                            color:var(--purple)
+                                                                                                                                                                                                                }
+                                                                                                                                            .resource{
+                                                                                                                                                background:#e5dfef;
+                                                                                                                                                min-height:150px;
+                                                                                                                                                border-radius:10px;
+                                                                                                                                                padding:24px;
+                                                                                                                                                margin-bottom:22px;
+                                                                                                                                                font-family:Georgia,serif;
+                                                                                                                                                font-size:27px;
+                                                                                                                                                line-height:1.2
+                                                                                                                                                }
+                                                                                                                                                .card:nth-child(2) .resource{
+                                                                                                                                                    background:#f7dfb1}
+                                                                                                                                                    .card:nth-child(3) .resource{
+                                                                                                                                                        background:#f5d4da
+                                                                                                                                                        }
+                                                                                                                                                        .faq{max-width:800px}
+                                                                                                                                                        details{
+                                                                                                                                                            border-bottom:1px solid var(--line);padding:20px 0}
+                                                                                                                                                            summary{cursor:pointer;
+                                                                                                                                                            font-weight:bold
+                                                                                                                                                        }
+                                                                                                                                                            details p
+                                                                                                                                                            {
+                                                                                                                                                                margin:15px 0 0;font-size:16px}
+                                                                                                                                                                .about
+                                                                                                                                                                {background:var(--lav);
+                                                                                                                                                                text-align:center}
+                                                                                                                                                                .about .wrap{max-width:750px}
+                                                                                                                                                                .footer{padding:40px 0 25px}
+                                                                                                                                                                .foot-grid{display:flex;
+                                                                                                                                                                justify-content:space-between;
+                                                                                                                                                                gap:30px;flex-wrap:wrap}
+                                                                                                                                                                .footer a{font-size:14px}
+                                                                                                                                                                .footer .fine
+                                                                                                                                                                {margin-top:35px;
+                                                                                                                                                                border-top:1px solid var(--line);
+                                                                                                                                                                padding-top:20px}.skip{position:absolute;top:-100px
+                                                                                                                                                                }.skip:focus
+                                                                                                                                                                {
+                                                                                                                                                                    top:0;z-index:100;
+                                                                                                                                                                    background:white;
+                                                                                                                                                                    padding:15px}
+
+                                                                                                                                                                    [hidden]
+                                                                                                                                                                    {
+                                                                                                                                                                        display:none!important}@media(max-width:900px)
+                                                                                                                                                                        {
+                                                                                                                                                                            .hero-grid{grid-template-columns:1fr;gap:25px}
+                                                                                                                                                                            .visual{max-width:580px;width:100%;margin:auto}
+                                                                                                                                                                            .hero{padding:50px 0}.grid3{grid-template-columns:1fr}
+                                                                                                                                                                            .studio-grid{grid-template-columns:1fr}
+                                                                                                                                                                            .slides-pane{border-right:0;border-bottom:1px solid var(--line)}
+                                                                                                                                                                            .links{display:none;position:absolute;top:84px;left:0;right:0;background:var(--cream);padding:25px;flex-direction:column;border-bottom:1px solid var(--line)}
+                                                                                                                                                                            .links.open{display:flex}
+                                                                                                                                                                            .menu{display:block;margin-left:auto}.nav>.btn{display:none}
+                                                                                                                                                                            .under-hero{flex-wrap:wrap}section.pad{padding:55px 0}
+                                                                                                                                                                            .studio-heading{align-items:start;flex-direction:column}
+                                                                                                                                                                            .mock-body{padding:15px;gap:10px}
+                                                                                                                                                                            .slide{padding:15px}.logo{font-size:21px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.page-back{display:inline-block;margin-bottom:25px;font-size:15px}.studio-section{min-height:65vh}.toolbar input{max-width:100%}
+
+/* ============ Aura Maxing studio: compact layout ============ */
+.pad.studio-section{min-height:0;padding:18px 0 24px}
+.page-back{margin-bottom:12px}
+.slide-screen{min-height:170px}
+.slide-screen img{height:170px}
+.note-list{max-height:90px}
+.toolbar{padding:10px 18px}
+.toolbar input{font-size:18px;padding:5px 8px}
+.slides-pane{padding:14px}
+.notes-pane{padding:14px}
+.notes-pane textarea{min-height:42px}
+.studio-section .wrap> p{margin-bottom:8px;font-size:15px}
+
+/* Transport: integrated audio playback + notes timeline */
+.transport{display:flex;align-items:center;gap:12px;padding:8px 18px;border-top:1px solid var(--line);background:#fbfaf6}
+.transport-play{flex:0 0 auto;width:38px;height:38px;border-radius:50%;border:1px solid var(--ink);background:var(--ink);color:#fff;font-size:15px;line-height:1;display:grid;place-items:center;cursor:pointer;transition:background .15s,border-color .15s}
+.transport-play:hover{background:var(--purple);border-color:var(--purple)}
+.transport-play:disabled{opacity:.4;cursor:not-allowed}
+.transport-time{flex:0 0 auto;font-variant-numeric:tabular-nums;font-size:13px;color:var(--muted);white-space:nowrap}
+.transport-track{flex:1;position:relative;height:26px;display:flex;align-items:center;cursor:pointer}
+.transport-track::before{content:"";position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);height:8px;border-radius:8px;background:var(--line)}
+.transport-progress{position:absolute;left:0;top:50%;transform:translateY(-50%);height:8px;border-radius:8px;background:var(--purple);width:0;transition:width .1s linear;pointer-events:none}
+.transport-events{position:absolute;left:0;right:0;top:0;height:100%}
+.timeline-marker{position:absolute;top:50%;transform:translate(-50%,-50%);border:0;background:var(--pink);color:var(--ink);border-radius:50%;width:16px;height:16px;line-height:1;padding:0;font-size:12px;cursor:pointer;box-shadow:0 0 0 3px #fff}
+.timeline-marker:hover{background:#f49aa8;transform:translate(-50%,-50%) scale(1.2)}
+
+/* Action row */
+.action-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:8px 18px;border-top:1px solid var(--line)}
+.action-row .status{flex:1 1 240px}
+.action-buttons{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+
+/* AI feature row */
+.ai-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:8px 18px;border-top:1px solid var(--line)}
+.ai-btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--ink);background:var(--ink);color:#fff;border-radius:40px;padding:8px 16px;font-weight:bold;font-size:14px;line-height:1.4;cursor:pointer;text-decoration:none}
+.ai-btn:hover{background:var(--purple);border-color:var(--purple)}
+
+/* Saved sessions (collapsible) */
+details.saved{padding:0}
+details.saved summary{display:flex;align-items:center;gap:10px;padding:10px 18px;font-weight:bold;font-size:16px;cursor:pointer;list-style:none}
+details.saved summary::-webkit-details-marker{display:none}
+details.saved summary::after{content:"+";margin-left:auto;font-size:18px;color:var(--muted)}
+details.saved[open] summary::after{content:"−"}
+details.saved[open] summary{border-bottom:1px solid var(--line)}
+details.saved #sessions{padding:0 18px 14px}
+
+/* Compact footer on the studio page */
+body[data-sample="false"] .footer{padding:18px 0 18px}
+body[data-sample="false"] .footer .fine{margin-top:16px;padding-top:12px}
+
+#record.recording{background:#e0556a;border-color:#e0556a}
+
+/* AI overlays */
+.ai-overlay{position:fixed;inset:0;z-index:60;display:none}
+.ai-overlay.open{display:block}
+.ai-overlay-backdrop{position:absolute;inset:0;background:rgba(36,35,48,.45)}
+.ai-overlay-panel{position:absolute;inset:0;margin:auto;width:min(720px,92vw);height:min(82vh,680px);background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 30px 80px rgba(36,35,48,.35);display:flex;flex-direction:column;overflow:hidden;animation:aura-pop .18s ease-out}
+.ai-overlay-close{position:absolute;top:12px;right:12px;z-index:2;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:#fff;font-size:18px;line-height:1;cursor:pointer}
+.ai-overlay-close:hover{background:var(--lav)}
+.ai-overlay-body{padding:26px 30px 30px;overflow:auto}
+.ai-overlay-body h3{margin-bottom:14px}
+@keyframes aura-pop{from{opacity:0;transform:scale(.96) translateY(12px)}to{opacity:1;transform:none}}
+body.overlay-open{overflow:hidden}
+
+/* Central loading overlay */
+.loading-overlay{position:fixed;inset:0;z-index:80;display:none;align-items:center;justify-content:center;background:rgba(36,35,48,.5)}
+.loading-overlay.open{display:flex}
+.loading-card{background:#fff;border-radius:18px;padding:34px 42px;min-width:280px;max-width:440px;text-align:center;box-shadow:0 30px 80px rgba(36,35,48,.35)}
+.spinner{width:44px;height:44px;margin:0 auto 18px;border-radius:50%;border:4px solid var(--lav);border-top-color:var(--purple);animation:aura-spin .8s linear infinite}
+@keyframes aura-spin{to{transform:rotate(360deg)}}
+.loading-message{margin:0;color:var(--ink);font-size:15px}
